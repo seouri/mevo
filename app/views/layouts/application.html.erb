@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>MEVO - <%= controller.controller_name.titleize %></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/reset-fonts-grids/reset-fonts-grids.css">
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/base/base-min.css">
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/tabview/assets/skins/sam/tabview.css">
+<%= stylesheet_link_tag "default" %>
+</head>
+<body>
+<div id="doc4" class="yui-t7">
+<div id="hd">MEVO: MeSH Evolution Browser</div><!-- #hd -->
+<div id="bd">
+  <div class="yui-navset yui-navset-left">
+    <ul class="yui-nav">
+<% for menu in %w(home terms) -%>
+<% navclass = menu == controller.controller_name ? "#{menu} selected" : menu -%>
+      <li class="<%= navclass %>"><%= link_to "<em>#{menu.titleize}</em>", {:controller => menu, :action => @period} %></li>
+<% end -%>
+    </ul>
+    <div class="yui-content <%= controller.controller_name %>">
+<%= yield %>
+    </div><!-- .yui-content -->
+  </div><!-- .yui-navset .yui-navset-left -->
+</div><!-- #bd -->
+<div id="ft">Center for Biomedical Informatics, Harvard Medical School</div><!-- #ft -->
+</div><!-- #doc4 -->
+</body>
+</html>
+
