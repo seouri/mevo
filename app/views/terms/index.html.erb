@@ -1,0 +1,22 @@
+<h1>Listing terms</h1>
+
+<table>
+  <tr>
+    <th>Term</th>
+    <th>Term ui</th>
+  </tr>
+
+<% for term in @terms %>
+  <tr>
+    <td><%=h term.term %></td>
+    <td><%=h term.term_ui %></td>
+    <td><%= link_to 'Show', term %></td>
+    <td><%= link_to 'Edit', edit_term_path(term) %></td>
+    <td><%= link_to 'Destroy', term, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New term', new_term_path %>

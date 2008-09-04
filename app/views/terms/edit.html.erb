@@ -1,0 +1,20 @@
+<h1>Editing term</h1>
+
+<% form_for(@term) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :term %><br />
+    <%= f.text_field :term %>
+  </p>
+  <p>
+    <%= f.label :term_ui %><br />
+    <%= f.text_field :term_ui %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @term %> |
+<%= link_to 'Back', terms_path %>
