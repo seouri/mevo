@@ -1,5 +1,5 @@
 <h1>Terms</h1>
-
+<%= page_entries_info @terms %>
 <table>
   <tr>
     <th>Term</th>
@@ -13,5 +13,4 @@
   </tr>
 <% end %>
 </table>
-
-<%= link_to 'New term', new_term_path %>
+<%= will_paginate @term %>

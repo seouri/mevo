@@ -2,7 +2,7 @@ class TermsController < ApplicationController
   # GET /terms
   # GET /terms.xml
   def index
-    @terms = Term.find(:all)
+    @terms = Term.search params[:q], :page => params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
