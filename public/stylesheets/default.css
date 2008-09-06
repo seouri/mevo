@@ -1,7 +1,46 @@
+#hd { font-size: 138.5%; margin: 0.5em 0; font-weight: bold;}
+#ft { text-align: right; font-size: 85% }
 /* http://kuler.adobe.com/#themeID/231174 
 #9cc : sky
-#feb : beige
 #e53 : orange
 #765 : dark brown
+#feb : beige
 #aa8 : light olive
 */
+
+.home  { background-color: #9cc; }
+.terms { background-color: #e53; }
+.books { background-color: #765; }
+.test2 { background-color: #aa8; }
+
+/* yui tabview customization start */
+li.home, li.terms, li.books, li.test2 {
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -moz-border-radius-topleft: 4px;
+}
+.yui-navset-left .yui-nav a,
+.yui-navset-left .yui-nav a:visited {
+  color: #fff;
+}
+.yui-navset-left .yui-nav a em {
+  border-right:1px solid #fff;
+  padding:0.5em 0.75em;
+}
+.yui-navset-left .yui-nav .selected a em{
+  font-weight: bold;
+  border-right-width:0;
+}
+.yui-navset-left .yui-content {
+  padding: 1em;
+}
+.mv-content {
+  background:#fff;
+  padding: 0.5em 1em 1em 1em;
+  min-height: 32em;
+  height: auto !important;
+  height: 32em;
+  clear:both;
+}
+/* yui tabview customization start */
