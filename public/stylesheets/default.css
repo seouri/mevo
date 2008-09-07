@@ -90,3 +90,18 @@ li.home, li.terms, li.books, li.test2 {
   *:first-child+html .pagination {
     overflow: hidden; }
 /* pagination end */
+
+/* alphabetical query list start */
+ul.alphabetical {
+	margin: 1em 0;
+}
+  .alphabetical li {
+    display: inline;
+    list-style: none;
+    margin: 0 0.6em;
+    font-weight:bold;
+  }
+  .alphabetical a {
+    font-weight:normal;
+  }
+/* alphabetical query list end */
