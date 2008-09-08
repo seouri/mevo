@@ -13,6 +13,7 @@ ActiveRecord::Schema.define(:version => 20080908074250) do
 
   create_table "books", :force => true do |t|
     t.string   "title",            :limit => 9
+    t.integer  "terms_count",                   :default => 0
     t.integer  "line_items_count",              :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"

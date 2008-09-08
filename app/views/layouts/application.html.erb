@@ -15,9 +15,9 @@
 <div id="bd">
   <div class="yui-navset yui-navset-left">
     <ul class="yui-nav">
-<% for menu in %w(home terms books test2) -%>
+<% for menu in %w(home books terms) -%>
 <% navclass = menu == controller.controller_name ? "#{menu} selected" : menu -%>
-      <li class="<%= navclass %>"><%= link_to "<em>#{menu.titleize}</em>", {:controller => menu, :action => @period} %></li>
+      <li class="<%= navclass %>"><%= link_to "<em>#{menu.titleize}</em>", "/#{menu}" %></li>
 <% end -%>
     </ul>
     <div class="yui-content <%= controller.controller_name %>">

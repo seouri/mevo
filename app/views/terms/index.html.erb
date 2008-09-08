@@ -1,4 +1,4 @@
-<h1>Terms</h1>
+<h1><%= link_to("MeSH #{@book.title} ", book_path(@book)) if @book %>Terms</h1>
 <%= alphabetical_query_list @q %>
 <%= page_entries_info @terms %>
 <table>

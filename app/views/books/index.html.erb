@@ -2,6 +2,6 @@
 
 <ul>
 <% for book in @books %>
-  <li><%= link_to  book.title, book_path(book) %></li>
+  <li><%= link_to  book.title, book_path(book) %>: <%= number_with_delimiter book.line_items_count %> nodes, <%= number_with_delimiter book.terms_count %> terms</li>
 <% end %>
 </ul>

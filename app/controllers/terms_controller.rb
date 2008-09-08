@@ -1,9 +1,11 @@
 class TermsController < ApplicationController
+  before_filter :find_book
   # GET /terms
   # GET /terms.xml
   def index
     @q = params[:q]
-    @terms = Term.search @q, :page => params[:page]
+    total_entries = @book ? @book.terms_count : ""
+    @terms = (@book ? @book.terms : Term).search @q, :page => params[:page], :total_entries => total_entries
 
     respond_to do |format|
       format.html # index.html.erb
@@ -81,6 +83,13 @@ class TermsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(terms_url) }
       format.xml  { head :ok }
+    end
+  end
+
+protected
+  def find_book
+    if params[:book_id]
+      @book = Book.find params[:book_id]
     end
   end
 end

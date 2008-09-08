@@ -9,9 +9,8 @@
 */
 
 .home  { background-color: #9cc; }
-.terms { background-color: #e53; }
-.books { background-color: #765; }
-.test2 { background-color: #aa8; }
+.books { background-color: #e53; }
+.terms { background-color: #765; }
 
 /* yui tabview customization start */
 li.home, li.terms, li.books, li.test2 {

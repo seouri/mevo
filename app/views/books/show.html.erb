@@ -1,3 +1,4 @@
 <h1><%= @book.title %></h1>
 
 nodes: <%= number_with_delimiter @book.line_items_count %>
+terms: <%= link_to(number_with_delimiter(@book.terms_count), book_terms_path(@book)) %>
