@@ -2,7 +2,6 @@ class CreateTerms < ActiveRecord::Migration
   def self.up
     create_table :terms do |t|
       t.string :term, :uniq => true
-      t.string :term_ui, :limit => 7
     end
     add_index :terms, :term
   end

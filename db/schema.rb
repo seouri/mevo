@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(:version => 20080908074250) do
 
   create_table "terms", :force => true do |t|
     t.string "term"
-    t.string "term_ui", :limit => 7
   end
 
   add_index "terms", ["term"], :name => "index_terms_on_term"
