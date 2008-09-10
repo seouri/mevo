@@ -6,6 +6,7 @@ class Term < ActiveRecord::Base
     options[:conditions] ||= ["#{Term.table_name}.term LIKE ?", "#{query}%"] unless query.blank?
     options[:page]      ||= 1
     options[:per_page]  ||= 20
+    options.delete_if {|k,v| k == :total_entries and v.nil?}
     paginate options
   end
 end
