@@ -1,0 +1,12 @@
+<h1><%= @book.title %></h1>
+
+<%= page_entries_info @lines %>
+<table>
+<% for l in @lines -%>
+  <tr>
+    <td><%= "&nbsp;&nbsp;&nbsp;" * (l.indent - 2)%><%= link_to l.term.term, term_path(l.term) %></td>
+    <td><%= l.tree_number %></td>
+  </tr>
+<% end -%>
+</table>
+<%= will_paginate @lines %>

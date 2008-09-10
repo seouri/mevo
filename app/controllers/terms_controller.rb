@@ -4,7 +4,7 @@ class TermsController < ApplicationController
   # GET /terms.xml
   def index
     @q = params[:q]
-    total_entries = @book ? @book.terms_count : ""
+    total_entries = @book && @q.nil? ? @book.terms_count : nil 
     @terms = (@book ? @book.terms : Term).search @q, :page => params[:page], :total_entries => total_entries
 
     respond_to do |format|
@@ -17,6 +17,7 @@ class TermsController < ApplicationController
   # GET /terms/1.xml
   def show
     @term = Term.find(params[:id])
+    @lines = @term.lines :include => :book
 
     respond_to do |format|
       format.html # show.html.erb

@@ -4,13 +4,11 @@
 <table>
   <tr>
     <th>Term</th>
-    <th>Term ui</th>
   </tr>
 
 <% for term in @terms %>
   <tr>
     <td><%= link_to term.term, term_path(term) %></td>
-    <td><%=h term.term_ui %></td>
   </tr>
 <% end %>
 </table>

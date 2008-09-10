@@ -1,6 +1,10 @@
 <h1><%= @term.term %></h1>
 
-<%= pluralize @term.books.size, "year" %>
-<% for book in @term.books -%>
-<%= link_to book.title, book_path(book) %>
+<table>
+<% for line in @term.lines -%>
+  <tr>
+    <td><%= link_to line.book.title, book_path(line.book) %></td>
+    <td><%= line.tree_number %></td>
+  </tr>
 <% end -%>
+</table>
