@@ -24,8 +24,9 @@ ActiveRecord::Schema.define(:version => 20080908074250) do
   create_table "line_items", :force => true do |t|
     t.integer  "book_id"
     t.integer  "term_id"
-    t.integer  "page",       :limit => 2
-    t.integer  "indent",     :limit => 1
+    t.integer  "page",        :limit => 2
+    t.integer  "indent",      :limit => 1
+    t.string   "tree_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
