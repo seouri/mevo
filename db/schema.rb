@@ -35,7 +35,8 @@ ActiveRecord::Schema.define(:version => 20080908074250) do
   add_index "line_items", ["term_id", "book_id"], :name => "index_line_items_on_term_id_and_book_id"
 
   create_table "terms", :force => true do |t|
-    t.string "term"
+    t.string  "term"
+    t.integer "books_count", :default => 0
   end
 
   add_index "terms", ["term"], :name => "index_terms_on_term"
