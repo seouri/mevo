@@ -4,11 +4,13 @@
 <table>
   <tr>
     <th>Term</th>
+    <th>Years</th>
   </tr>
 
 <% for term in @terms %>
   <tr>
     <td><%= link_to term.term, term_path(term) %></td>
+    <td><%= term.books_count %></td>
   </tr>
 <% end %>
 </table>
