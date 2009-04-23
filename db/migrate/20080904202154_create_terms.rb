@@ -3,6 +3,7 @@ class CreateTerms < ActiveRecord::Migration
     create_table :terms do |t|
       t.string :term, :uniq => true
       t.integer :books_count, :default => 0
+      t.timestamps
     end
     add_index :terms, :term
   end

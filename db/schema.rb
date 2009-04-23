@@ -24,9 +24,10 @@ ActiveRecord::Schema.define(:version => 20080908074250) do
   create_table "line_items", :force => true do |t|
     t.integer  "book_id"
     t.integer  "term_id"
-    t.integer  "page",        :limit => 2
-    t.integer  "indent",      :limit => 1
+    t.integer  "page",                   :limit => 2
+    t.integer  "indent",                 :limit => 1
     t.string   "tree_number"
+    t.string   "normalized_tree_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -35,8 +36,10 @@ ActiveRecord::Schema.define(:version => 20080908074250) do
   add_index "line_items", ["term_id", "book_id"], :name => "index_line_items_on_term_id_and_book_id"
 
   create_table "terms", :force => true do |t|
-    t.string  "term"
-    t.integer "books_count", :default => 0
+    t.string   "term"
+    t.integer  "books_count", :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "terms", ["term"], :name => "index_terms_on_term"
