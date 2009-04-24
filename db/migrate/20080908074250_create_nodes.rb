@@ -1,6 +1,6 @@
-class CreateLineItems < ActiveRecord::Migration
+class CreateNodes < ActiveRecord::Migration
   def self.up
-    create_table :line_items do |t|
+    create_table :nodes do |t|
       t.integer :book_id
       t.integer :term_id
       t.integer :page, :limit => 2
@@ -9,11 +9,11 @@ class CreateLineItems < ActiveRecord::Migration
       t.string :normalized_tree_number
       t.timestamps
     end
-    add_index :line_items, [:book_id, :tree_number]
-    add_index :line_items, [:term_id, :book_id]
+    add_index :nodes, [:book_id, :tree_number]
+    add_index :nodes, [:term_id, :book_id]
   end
 
   def self.down
-    drop_table :line_items
+    drop_table :nodes
   end
 end

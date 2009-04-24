@@ -9,7 +9,7 @@
 <% for book in @books -%>
   <tr>
     <td><%= link_to  book.title, book_path(book) %></td>
-    <td><%= link_to number_with_delimiter(book.line_items_count), lines_book_path(book) %></td>
+    <td><%= link_to number_with_delimiter(book.nodes_count), nodes_book_path(book) %></td>
     <td><%= link_to number_with_delimiter(book.terms_count), book_terms_path(book) %></td>
   </tr>
 <% end -%>

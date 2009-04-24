@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LineItemTest < ActiveSupport::TestCase
+class NodeTest < ActiveSupport::TestCase
   # Replace this with your real tests.
   def test_truth
     assert true

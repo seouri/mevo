@@ -21,9 +21,9 @@ class BooksController < ApplicationController
     end
   end
 
-  def lines
+  def nodes
     @book = Book.find(params[:id])
-    @lines = @book.lines.search params[:q], :page => params[:page], :per_page => 15, :include => :term
+    @nodes = @book.nodes.search params[:q], :page => params[:page], :per_page => 15, :include => :term
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @book }

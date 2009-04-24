@@ -12,16 +12,16 @@
 ActiveRecord::Schema.define(:version => 20080908074250) do
 
   create_table "books", :force => true do |t|
-    t.string   "title",            :limit => 9
-    t.integer  "terms_count",                   :default => 0
-    t.integer  "line_items_count",              :default => 0
+    t.string   "title",       :limit => 9
+    t.integer  "terms_count",              :default => 0
+    t.integer  "nodes_count",              :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "books", ["title"], :name => "index_books_on_title"
 
-  create_table "line_items", :force => true do |t|
+  create_table "nodes", :force => true do |t|
     t.integer  "book_id"
     t.integer  "term_id"
     t.integer  "page",                   :limit => 2
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(:version => 20080908074250) do
     t.datetime "updated_at"
   end
 
-  add_index "line_items", ["book_id", "tree_number"], :name => "index_line_items_on_book_id_and_tree_number"
-  add_index "line_items", ["term_id", "book_id"], :name => "index_line_items_on_term_id_and_book_id"
+  add_index "nodes", ["book_id", "tree_number"], :name => "index_nodes_on_book_id_and_tree_number"
+  add_index "nodes", ["term_id", "book_id"], :name => "index_nodes_on_term_id_and_book_id"
 
   create_table "terms", :force => true do |t|
     t.string   "term"

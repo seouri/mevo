@@ -17,7 +17,7 @@ class TermsController < ApplicationController
   # GET /terms/1.xml
   def show
     @term = Term.find(params[:id])
-    @lines = @term.lines :include => :book
+    @nodes = @term.nodes :include => :book
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @term }

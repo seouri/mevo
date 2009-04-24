@@ -2,11 +2,11 @@
 
 <%= @term.books_count %> years
 
-<% @term.lines.group_by(&:book).each do |book, lines| -%>
+<% @term.nodes.group_by(&:book).each do |book, nodes| -%>
 <h2><%= link_to book.title, book_path(book) %></h2>
-  <% for line in lines -%>
+  <% for node in nodes -%>
 <table>
-    <% for ancestor in line.ancestors -%>
+    <% for ancestor in node.ancestors -%>
 <tr>
   <td><%= link_to(ancestor.term.term, book_term_path(ancestor.book, ancestor.term), :class => "indent#{ancestor.indent - 2}") %></td>
   <td><%= ancestor.tree_number %></td>
@@ -14,11 +14,11 @@
 </tr>
     <% end -%>
   <tr class="highlight">
-    <td><%= link_to(line.term.term, book_term_path(line.book, line.term), :class => "indent#{line.indent - 2}")%></td>
-    <td><%= line.tree_number %></td>
-    <td><%= line.normalized_tree_number %></td>
+    <td><%= link_to(node.term.term, book_term_path(node.book, node.term), :class => "indent#{node.indent - 2}")%></td>
+    <td><%= node.tree_number %></td>
+    <td><%= node.normalized_tree_number %></td>
   </tr>
-    <% for child in line.children -%>
+    <% for child in node.children -%>
   <tr>
     <td><%= link_to(child.term.term, book_term_path(child.book, child.term), :class => "indent#{child.indent - 2}") %></td>
     <td><%= child.tree_number %></td>

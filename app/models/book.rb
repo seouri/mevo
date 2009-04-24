@@ -1,4 +1,4 @@
 class Book < ActiveRecord::Base
-  has_many :lines, :class_name => "LineItem"
-  has_many :terms, :through => :lines, :uniq => true
+  has_many :nodes
+  has_many :terms, :through => :nodes, :uniq => true
 end

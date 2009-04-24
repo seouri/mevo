@@ -1,0 +1,14 @@
+<h1><%= link_to(@book.title, @book) %></h1>
+
+<%= page_entries_info @nodes %>
+<table>
+<% for n in @nodes -%>
+  <tr>
+    <td><%= link_to n.term.term, book_term_path(@book, n.term), :class => "indent#{n.indent - 2}" %></td>
+    <td><%= n.tree_number %></td>
+    <td><%= n.normalized_tree_number %></td>
+    <td>edit | delete | insert after</td>
+  </tr>
+<% end -%>
+</table>
+<%= will_paginate @nodes %>
