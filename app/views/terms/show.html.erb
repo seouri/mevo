@@ -13,7 +13,7 @@
   <td><%= ancestor.normalized_tree_number %></td>
 </tr>
 <% end -%>
-  <tr>
+  <tr class="highlight">
     <td><%= link_to(line.term.term, book_term_path(line.book, line.term), :class => "indent#{line.indent - 2}")%></td>
     <td><%= line.tree_number %></td>
     <td><%= line.normalized_tree_number %></td>
