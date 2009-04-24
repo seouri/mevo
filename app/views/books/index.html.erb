@@ -1,7 +1,16 @@
 <h1>Books</h1>
 
-<ul>
-<% for book in @books %>
-  <li><%= link_to  book.title, book_path(book) %>: <%= link_to number_with_delimiter(book.line_items_count), lines_book_path(book) %> nodes, <%= link_to number_with_delimiter(book.terms_count), book_terms_path(book) %> terms</li>
-<% end %>
-</ul>
+<table>
+  <tr>
+    <th>Year</th>
+    <th>Nodes</th>
+    <th>Terms</th>
+  </tr>
+<% for book in @books -%>
+  <tr>
+    <td><%= link_to  book.title, book_path(book) %></td>
+    <td><%= link_to number_with_delimiter(book.line_items_count), lines_book_path(book) %></td>
+    <td><%= link_to number_with_delimiter(book.terms_count), book_terms_path(book) %></td>
+  </tr>
+<% end -%>
+</table>
