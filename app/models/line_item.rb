@@ -13,4 +13,16 @@ class LineItem < ActiveRecord::Base
   def children
     LineItem.find(:all, :conditions => ["tree_number LIKE ? AND indent = ? AND book_id = ?", "#{tree_number}.%", indent + 1, book_id])
   end
+  
+  def ancestors
+    tree = tree_number.split(/\./)
+    tree.pop
+    ancestors = []
+    tree.each_index do |i|
+      tree_num = tree[0..i].join(".")
+      ancestor = LineItem.find_by_tree_number_and_book_id(tree_num, book_id)
+      ancestors.push(ancestor)
+    end
+    ancestors
+  end
 end

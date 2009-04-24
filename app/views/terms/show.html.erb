@@ -6,6 +6,13 @@
 <h2><%= link_to line.book.title, book_path(line.book) %></h2>
 
 <table>
+<% for ancestor in line.ancestors -%>
+<tr>
+  <td><%= link_to(ancestor.term.term, book_term_path(ancestor.book, ancestor.term), :class => "indent#{ancestor.indent - 2}") %></td>
+  <td><%= ancestor.tree_number %></td>
+  <td><%= ancestor.normalized_tree_number %></td>
+</tr>
+<% end -%>
   <tr>
     <td><%= link_to(line.term.term, book_term_path(line.book, line.term), :class => "indent#{line.indent - 2}")%></td>
     <td><%= line.tree_number %></td>
