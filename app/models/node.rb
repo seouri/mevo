@@ -11,7 +11,7 @@ class Node < ActiveRecord::Base
   end
   
   def children
-    Node.find(:all, :conditions => ["tree_number LIKE ? AND indent = ? AND book_id = ?", "#{tree_number}.%", indent + 1, book_id])
+    Node.find(:all, :conditions => ["tree_number LIKE ? AND level = ? AND book_id = ?", "#{tree_number}.%", level + 1, book_id])
   end
   
   def ancestors

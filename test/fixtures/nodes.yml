@@ -4,10 +4,10 @@ one:
   book_id: 1
   term_id: 1
   page: 1
-  indent: 1
+  level: 1
 
 two:
   book_id: 1
   term_id: 1
   page: 1
-  indent: 1
+  level: 1

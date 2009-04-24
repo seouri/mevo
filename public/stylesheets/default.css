@@ -110,17 +110,17 @@ ul.alphabetical {
   }
 /* alphabetical query list end */
 
-.indent0 { margin-left: 0; }
-.indent1 { margin-left: 1em; }
-.indent2 { margin-left: 2em; }
-.indent3 { margin-left: 3em; }
-.indent4 { margin-left: 4em; }
-.indent5 { margin-left: 5em; }
-.indent6 { margin-left: 6em; }
-.indent7 { margin-left: 7em; }
-.indent8 { margin-left: 8em; }
-.indent9 { margin-left: 9em; }
-.indent10 { margin-left: 10em; }
-.indent11 { margin-left: 11em; }
-.indent12 { margin-left: 12em; }
-.indent13 { margin-left: 13em; }
+.level0  { margin-left: 0; }
+.level1  { margin-left: 0; }
+.level2  { margin-left: 0; }
+.level3  { margin-left: 1em; }
+.level4  { margin-left: 2em; }
+.level5  { margin-left: 3em; }
+.level6  { margin-left: 4em; }
+.level7  { margin-left: 5em; }
+.level8  { margin-left: 6em; }
+.level9  { margin-left: 7em; }
+.level10 { margin-left: 8em; }
+.level11 { margin-left: 9em; }
+.level12 { margin-left: 10em; }
+.level13 { margin-left: 11em; }

@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20080908074250) do
     t.integer  "book_id"
     t.integer  "term_id"
     t.integer  "page",                   :limit => 2
-    t.integer  "indent",                 :limit => 1
+    t.integer  "level",                  :limit => 1
     t.string   "tree_number"
     t.string   "normalized_tree_number"
     t.datetime "created_at"

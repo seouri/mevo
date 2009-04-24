@@ -4,7 +4,7 @@
 <table>
 <% for n in @nodes -%>
   <tr>
-    <td><%= link_to n.term.term, book_term_path(@book, n.term), :class => "indent#{n.indent - 2}" %></td>
+    <td><%= link_to n.term.term, book_term_path(@book, n.term), :class => "level#{n.level}" %></td>
     <td><%= n.tree_number %></td>
     <td><%= n.normalized_tree_number %></td>
     <td>edit | delete | insert after</td>

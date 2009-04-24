@@ -8,19 +8,19 @@
 <table>
     <% for ancestor in node.ancestors -%>
 <tr>
-  <td><%= link_to(ancestor.term.term, book_term_path(ancestor.book, ancestor.term), :class => "indent#{ancestor.indent - 2}") %></td>
+  <td><%= link_to(ancestor.term.term, book_term_path(ancestor.book, ancestor.term), :class => "level#{ancestor.level}") %></td>
   <td><%= ancestor.tree_number %></td>
   <td><%= ancestor.normalized_tree_number %></td>
 </tr>
     <% end -%>
   <tr class="highlight">
-    <td><%= link_to(node.term.term, book_term_path(node.book, node.term), :class => "indent#{node.indent - 2}")%></td>
+    <td><%= link_to(node.term.term, book_term_path(node.book, node.term), :class => "level#{node.level}")%></td>
     <td><%= node.tree_number %></td>
     <td><%= node.normalized_tree_number %></td>
   </tr>
     <% for child in node.children -%>
   <tr>
-    <td><%= link_to(child.term.term, book_term_path(child.book, child.term), :class => "indent#{child.indent - 2}") %></td>
+    <td><%= link_to(child.term.term, book_term_path(child.book, child.term), :class => "level#{child.level}") %></td>
     <td><%= child.tree_number %></td>
     <td><%= child.normalized_tree_number %></td>
   </tr>
