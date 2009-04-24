@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20080908074250) do
     t.integer  "level",                  :limit => 1
     t.string   "tree_number"
     t.string   "normalized_tree_number"
+    t.string   "dui"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

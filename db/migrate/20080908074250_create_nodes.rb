@@ -7,6 +7,7 @@ class CreateNodes < ActiveRecord::Migration
       t.integer :level, :limit => 1
       t.string :tree_number
       t.string :normalized_tree_number
+      t.string :dui
       t.timestamps
     end
     add_index :nodes, [:book_id, :tree_number]
