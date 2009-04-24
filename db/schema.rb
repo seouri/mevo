@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20080908074250) do
     t.datetime "updated_at"
   end
 
-  add_index "line_items", ["book_id", "page"], :name => "index_line_items_on_book_id_and_page"
+  add_index "line_items", ["book_id", "tree_number"], :name => "index_line_items_on_book_id_and_tree_number"
   add_index "line_items", ["term_id", "book_id"], :name => "index_line_items_on_term_id_and_book_id"
 
   create_table "terms", :force => true do |t|

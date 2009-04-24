@@ -1,12 +1,22 @@
 <h1><%= @term.term %></h1>
 
 <%= @term.books_count %> years
-<table>
+
 <% for line in @term.lines -%>
+<h2><%= link_to line.book.title, book_path(line.book) %></h2>
+
+<table>
   <tr>
-    <td><%= link_to line.book.title, book_path(line.book) %></td>
+    <td><%= link_to(line.term.term, book_term_path(line.book, line.term), :class => "indent#{line.indent - 2}")%></td>
     <td><%= line.tree_number %></td>
     <td><%= line.normalized_tree_number %></td>
   </tr>
-<% end -%>
+  <% for child in line.children -%>
+  <tr>
+    <td><%= link_to(child.term.term, book_term_path(child.book, child.term), :class => "indent#{child.indent - 2}") %></td>
+    <td><%= child.tree_number %></td>
+    <td><%= child.normalized_tree_number %></td>
+  </tr>
+  <% end -%>
 </table>
+<% end -%>

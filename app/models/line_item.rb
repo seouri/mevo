@@ -9,4 +9,8 @@ class LineItem < ActiveRecord::Base
     options.delete_if {|k,v| k == :total_entries and v.nil?}
     paginate options
   end
+  
+  def children
+    LineItem.find(:all, :conditions => ["tree_number LIKE ? AND indent = ? AND book_id = ?", "#{tree_number}.%", indent + 1, book_id])
+  end
 end

@@ -9,7 +9,7 @@ class CreateLineItems < ActiveRecord::Migration
       t.string :normalized_tree_number
       t.timestamps
     end
-    add_index :line_items, [:book_id, :page]
+    add_index :line_items, [:book_id, :tree_number]
     add_index :line_items, [:term_id, :book_id]
   end
 

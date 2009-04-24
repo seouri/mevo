@@ -18,7 +18,6 @@ class TermsController < ApplicationController
   def show
     @term = Term.find(params[:id])
     @lines = @term.lines :include => :book
-    @lines.reject! {|line| line.book_id != @book.id } if @book
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @term }
