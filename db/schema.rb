@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20080908074250) do
     t.datetime "updated_at"
   end
 
-  add_index "nodes", ["book_id", "tree_number"], :name => "index_nodes_on_book_id_and_tree_number"
+  add_index "nodes", ["book_id", "normalized_tree_number"], :name => "index_nodes_on_book_id_and_normalized_tree_number"
   add_index "nodes", ["term_id", "book_id"], :name => "index_nodes_on_term_id_and_book_id"
 
   create_table "terms", :force => true do |t|

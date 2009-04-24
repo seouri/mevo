@@ -10,7 +10,7 @@ class CreateNodes < ActiveRecord::Migration
       t.string :dui
       t.timestamps
     end
-    add_index :nodes, [:book_id, :tree_number]
+    add_index :nodes, [:book_id, :normalized_tree_number]
     add_index :nodes, [:term_id, :book_id]
   end
 

@@ -112,15 +112,15 @@ ul.alphabetical {
 
 .level0  { margin-left: 0; }
 .level1  { margin-left: 0; }
-.level2  { margin-left: 0; }
-.level3  { margin-left: 1em; }
-.level4  { margin-left: 2em; }
-.level5  { margin-left: 3em; }
-.level6  { margin-left: 4em; }
-.level7  { margin-left: 5em; }
-.level8  { margin-left: 6em; }
-.level9  { margin-left: 7em; }
-.level10 { margin-left: 8em; }
-.level11 { margin-left: 9em; }
-.level12 { margin-left: 10em; }
-.level13 { margin-left: 11em; }
+.level2  { margin-left: 1em; }
+.level3  { margin-left: 2em; }
+.level4  { margin-left: 3em; }
+.level5  { margin-left: 4em; }
+.level6  { margin-left: 5em; }
+.level7  { margin-left: 6em; }
+.level8  { margin-left: 7em; }
+.level9  { margin-left: 8em; }
+.level10 { margin-left: 9em; }
+.level11 { margin-left: 10em; }
+.level12 { margin-left: 11em; }
+.level13 { margin-left: 12em; }

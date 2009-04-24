@@ -3,21 +3,19 @@
 nodes: <%= link_to(number_with_delimiter(@book.nodes_count), nodes_book_path(@book)) %>
 terms: <%= link_to(number_with_delimiter(@book.terms_count), book_terms_path(@book)) %>
 
-<h3>Level 2 Terms</h3>
+<h2>Categories</h2>
 
 <table>
   <tr>
     <th>Term</th>
     <th>Tree Number</th>
     <th>Normalized Tree Number</th>
-    <th>DUI</th>
   </tr>
-<% @book.nodes.level(2).each do |node| -%>
+<% @book.nodes.level(1).each do |node| -%>
   <tr>
     <td><%= link_to(node.term.term, term_path(node.term, :anchor => @book.title)) %></td>
     <td><%= node.tree_number %></td>
     <td><%= node.normalized_tree_number %></td>
-    <td><%= node.dui %></td>
   </tr>
 <% end -%>
 </table>
