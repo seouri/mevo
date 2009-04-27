@@ -2,32 +2,17 @@
 
 <%= @term.books_count %> years
 
-<% @term.nodes.group_by(&:book).each do |book, nodes| -%>
+<% ancestors_and_children(@term).group_by(&:book).each do |book, nodes| -%>
 <h2><a name="<%= book.title %>"><%= link_to book.title, book_path(book) %></a></h2>
-  <% for node in nodes -%>
+
 <table>
-    <% for ancestor in node.ancestors -%>
-<tr>
-  <td><%= link_to(ancestor.term.term, book_term_path(ancestor.book, ancestor.term, :anchor => ancestor.book.title), :class => "level#{ancestor.level}") %></td>
-  <td><%= ancestor.tree_number %></td>
-  <td><%= ancestor.normalized_tree_number %></td>
-  <td><%= ancestor.dui %></td>
-</tr>
-    <% end -%>
-  <tr class="highlight">
+  <% for node in nodes -%>
+  <tr<%= " class=\"highlight\"" if @term.term == node.term.term %>>
     <td><%= link_to(node.term.term, book_term_path(node.book, node.term, :anchor => node.book.title), :class => "level#{node.level}")%></td>
     <td><%= node.tree_number %></td>
     <td><%= node.normalized_tree_number %></td>
     <td><%= node.dui %></td>
   </tr>
-    <% for child in node.children -%>
-  <tr>
-    <td><%= link_to(child.term.term, book_term_path(child.book, child.term, :anchor => child.book.title), :class => "level#{child.level}") %></td>
-    <td><%= child.tree_number %></td>
-    <td><%= child.normalized_tree_number %></td>
-    <td><%= child.dui %></td>
-  </tr>
-    <% end -%>
   <% end -%>
 </table>
 <% end -%>
