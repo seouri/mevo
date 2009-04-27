@@ -10,7 +10,7 @@
 <% for term in @terms %>
   <tr>
     <td>
-      <%= link_to(term.term, book_term_path(@book, term)) if @book %>
+      <%= link_to(term.term, book_term_path(@book, term, :anchor => @book.title)) if @book %>
       <%= link_to(term.term, term_path(term)) unless @book %></td>
     <td><%= term.books_count %></td>
   </tr>
