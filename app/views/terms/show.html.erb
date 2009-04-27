@@ -2,7 +2,7 @@
 
 <%= @term.books_count %> years
 
-<% ancestors_and_children(@term).group_by(&:book).each do |book, nodes| -%>
+<% @term.ancestors_and_children.group_by(&:book).each do |book, nodes| -%>
 <h2><a name="<%= book.title %>"><%= link_to book.title, book_path(book) %></a></h2>
 
 <table>
