@@ -1,7 +1,7 @@
 class Node < ActiveRecord::Base
   belongs_to :book, :counter_cache => true
   belongs_to :term, :counter_cache => true
-  
+
   named_scope :level, lambda { |level| { :conditions => { :level => level } } }
 
   def self.search(query, options = {})
@@ -11,11 +11,18 @@ class Node < ActiveRecord::Base
     options.delete_if {|k,v| k == :total_entries and v.nil?}
     paginate options
   end
-  
+
+  def parent
+    tree = normalized_tree_number.split(/\./)
+    tree.pop
+    tree_num = tree.join(".")
+    Node.find_by_normalized_tree_number_and_book_id(tree_num, book_id)
+  end
+
   def children
     Node.find(:all, :conditions => ["normalized_tree_number LIKE ? AND level = ? AND book_id = ?", "#{normalized_tree_number}%", level + 1, book_id])
   end
-  
+
   def ancestors
     tree = normalized_tree_number.split(/\./)
     tree.pop

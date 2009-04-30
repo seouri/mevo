@@ -5,14 +5,15 @@
 <% @term.ancestors_and_children.group_by(&:book).each do |book, nodes| -%>
 <h2><a name="<%= book.title %>"><%= link_to book.title, book_path(book) %></a></h2>
 
-<table>
-  <% for node in nodes -%>
-  <tr<%= " class=\"highlight\"" if @term.term == node.term.term %>>
-    <td><%= link_to(node.term.term, book_term_path(node.book, node.term, :anchor => node.book.title), :class => "level#{node.level}")%></td>
-    <td><%= node.tree_number %></td>
-    <td><%= node.normalized_tree_number %></td>
-    <td><%= node.dui %></td>
-  </tr>
-  <% end -%>
-</table>
+<div id="tree<%= book.title %>">
+<%= tree_view(nodes, nodes[0]) %>
+</div><!-- #tree<%= book.title %> -->
+<script type="text/javascript">
+var tree<%= book.title %>;
+(function() {
+  tree<%= book.title %> = new YAHOO.widget.TreeView("tree<%= book.title %>");
+  tree<%= book.title %>.render();
+  tree<%= book.title %>.subscribe('clickEvent',function () {return false;});
+})();
+</script>
 <% end -%>
