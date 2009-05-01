@@ -9,4 +9,8 @@ module ApplicationHelper
     end
     content_tag :ul, list.join("\n"), :class => "alphabetical"
   end
+
+  def page_title(text)
+    content_for(:page_title) { text }
+  end
 end

@@ -2,7 +2,7 @@
  "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-<title>MEVO - <%= controller.controller_name.titleize %></title>
+<title><%= yield(:page_title) || controller.controller_name.titleize %> - MEVO</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.7.0/build/reset-fonts-grids/reset-fonts-grids.css&2.7.0/build/base/base-min.css&2.7.0/build/tabview/assets/skins/sam/tabview.css&2.7.0/build/treeview/assets/skins/sam/treeview.css">
 <script type="text/javascript" src="http://yui.yahooapis.com/combo?2.7.0/build/yahoo-dom-event/yahoo-dom-event.js&2.7.0/build/treeview/treeview-min.js"></script>
