@@ -10,7 +10,15 @@
 </head>
 <body>
 <div id="doc4" class="yui-t7">
-<div id="hd">MEVO: MeSH Evolution Browser</div><!-- #hd -->
+<div id="hd">
+  <div id="search">
+    <% form_tag({:controller => :terms}, {:method => :get}) do -%>
+      <%= text_field_tag :q, params[:q] %>
+      <%= submit_tag "Search", :name => nil %>
+    <% end -%>
+  </div><!-- #search -->
+  MEVO: MeSH Evolution Browser
+</div><!-- #hd -->
 <div id="bd">
   <div class="yui-navset yui-navset-left">
     <ul class="yui-nav">

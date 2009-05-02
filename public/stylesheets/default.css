@@ -102,10 +102,15 @@ ul.alphabetical {
   .alphabetical li {
     display: inline;
     list-style: none;
-    margin: 0 0.6em;
+    margin: 0;
     font-weight:bold;
   }
   .alphabetical a {
     font-weight:normal;
+    padding: 0 0.5em;
   }
 /* alphabetical query list end */
+
+#search {
+  float: right;
+}
