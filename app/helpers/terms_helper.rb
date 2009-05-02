@@ -1,14 +1,15 @@
 module TermsHelper
-  def tree_view(nodes, current_node)
+  def tree_view(nodes, current_node, term)
     space = "\t" * (current_node.level - 1)
     sibling = sibling(nodes, current_node)
     tree = []
     tree.push(space + "<ul>") if current_node == sibling.first
     title = current_node.tree_number + ' | ' + current_node.normalized_tree_number + ' | ' + current_node.dui
-    link =  link_to(current_node.term.term, term_path(current_node.term, :anchor => current_node.book.title), :title => title)
+    link_text = current_node.term.term == term.term ? "<strong>#{term.term}</strong>" : current_node.term.term
+    link =  link_to(link_text, term_path(current_node.term, :anchor => current_node.book.title), :title => title)
     tree.push(space + "\t" + "<li class=\"expanded\">" + link)
     children(nodes, current_node).each do |child|
-      child_tree = tree_view(nodes, child)
+      child_tree = tree_view(nodes, child, term)
       tree.push(child_tree)
     end
     tree.push(space + "\t" + "</li>")

@@ -7,7 +7,7 @@
 <h2><a name="<%= book.title %>"><%= link_to book.title, book_path(book) %></a></h2>
 
 <div id="tree<%= book.title %>">
-<%= tree_view(nodes, nodes[0]) %>
+<%= tree_view(nodes, nodes[0], @term) %>
 </div><!-- #tree<%= book.title %> -->
 <script type="text/javascript">
 var tree<%= book.title %>;
