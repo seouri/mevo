@@ -39,10 +39,12 @@ ActiveRecord::Schema.define(:version => 20080908074250) do
   create_table "terms", :force => true do |t|
     t.string   "term"
     t.integer  "books_count", :default => 0
+    t.string   "last_dui"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "terms", ["last_dui"], :name => "index_terms_on_last_dui"
   add_index "terms", ["term"], :name => "index_terms_on_term"
 
 end

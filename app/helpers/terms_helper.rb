@@ -1,4 +1,24 @@
 module TermsHelper
+  def evolution_view(term)
+    tr = []
+    year_min = term.entry_terms.map {|e| e.nodes.map {|n| n.book_id}.min}.min
+    year_max = term.entry_terms.map {|e| e.nodes.map {|n| n.book_id}.max}.max
+    entry_terms = term.entry_terms
+    entry_terms.sort!{|a,b| [a.nodes.map {|n| n.book_id}.min, a.nodes.map {|n| n.book_id}.max, a.nodes.map {|n| n.normalized_tree_number}.min] <=> [b.nodes.map {|n| n.book_id}.min, b.nodes.map {|n| n.book_id}.max, b.nodes.map {|n| n.normalized_tree_number}.min]}
+    entry_terms.each do |entry|
+      td = []
+      td.push(content_tag(:td, link_to_unless(term.term == entry.term, entry.term, entry)))
+      year_min.upto(year_max) do |year|
+        live = entry.nodes.map {|n| n.book_id}.include?(year) ? true : false
+        link = link_to_if(live, year, term_path(entry, :anchor => year))
+        css_class = live ? "live" : "dead"
+        td.push(content_tag(:td, link, :class => css_class))
+      end
+      tr.push(content_tag(:tr, td.join("\n")))
+    end
+    content_tag(:table, tr.join("\n"), :id => "evolution_view")
+  end
+
   def tree_view(nodes, current_node, term)
     tree = []
     unless current_node.nil?

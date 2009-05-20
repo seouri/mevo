@@ -12,10 +12,16 @@
 .books { background-color: #e53; }
 .terms { background-color: #765; }
 
+.home  a, .home  a:visited { color: #9cc; }
+.books a, .books a:visited { color: #e53; }
+.terms a, .terms a:visited { color: #765; }
+
 .home  .highlight td { background-color: #9cc; }
 .books .highlight td { background-color: #e53; }
 .terms .highlight td { background-color: #765; }
 .highlight td, .highlight td a { color: #fff; }
+
+#evolution_view .dead { color: #ddd;}
 
 /* yui tabview customization start */
 li.home, li.terms, li.books, li.test2 {

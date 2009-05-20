@@ -19,4 +19,9 @@ class Term < ActiveRecord::Base
     end
     unique_nodes.flatten.uniq
   end
+  
+  def entry_terms
+    return [] if last_dui.blank?
+    Term.find_all_by_last_dui(last_dui)
+  end
 end

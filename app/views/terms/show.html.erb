@@ -1,7 +1,9 @@
 <% page_title(@term.term) -%>
 <h1><%= @term.term %></h1>
 
-<%= @term.books_count %> years
+<%= pluralize(@term.books_count, "year") %>
+
+<%= evolution_view(@term) %>
 
 <% @term.ancestors_and_children.group_by(&:book).each do |book, nodes| -%>
 <h2><a name="<%= book.title %>"><%= link_to book.title, book_path(book) %></a></h2>
