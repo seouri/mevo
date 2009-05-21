@@ -22,6 +22,7 @@
 .highlight td, .highlight td a { color: #fff; }
 
 #evolution_view .dead { color: #ddd;}
+#evolution_view tr.current { font-weight: bold; }
 
 /* yui tabview customization start */
 li.home, li.terms, li.books, li.test2 {

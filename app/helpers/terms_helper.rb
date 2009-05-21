@@ -14,7 +14,8 @@ module TermsHelper
         css_class = live ? "live" : "dead"
         td.push(content_tag(:td, link, :class => css_class))
       end
-      tr.push(content_tag(:tr, td.join("\n")))
+      css_class = term.term == entry.term ? "current" : nil
+      tr.push(content_tag(:tr, td.join("\n"), :class => css_class))
     end
     content_tag(:table, tr.join("\n"), :id => "evolution_view")
   end
