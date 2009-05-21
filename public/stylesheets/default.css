@@ -1,5 +1,6 @@
 #hd { font-size: 138.5%; margin: 0.5em 0; font-weight: bold;}
 #ft { text-align: right; font-size: 85% }
+#ft a, #ft a:visited { color: #000;}
 /* http://kuler.adobe.com/#themeID/231174 
 #9cc : sky
 #e53 : orange
@@ -49,9 +50,9 @@ li.home, li.terms, li.books, li.test2 {
 .mv-content {
   background:#fff;
   padding: 0.5em 1em 1em 1em;
-  min-height: 32em;
+  min-height: 37em;
   height: auto !important;
-  height: 32em;
+  height: 37em;
   clear:both;
 }
 /* yui tabview customization start */
@@ -121,3 +122,16 @@ ul.alphabetical {
 #search {
   float: right;
 }
+
+.level1  { margin-left: 0; }
+.level2  { margin-left: 1em; }
+.level3  { margin-left: 2em; }
+.level4  { margin-left: 3em; }
+.level5  { margin-left: 4em; }
+.level6  { margin-left: 5em; }
+.level7  { margin-left: 6em; }
+.level8  { margin-left: 7em; }
+.level9  { margin-left: 8em; }
+.level10 { margin-left: 9em; }
+.level11 { margin-left: 10em; }
+.level12 { margin-left: 11em; }

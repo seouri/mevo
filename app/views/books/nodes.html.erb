@@ -5,7 +5,7 @@
 <table>
 <% for n in @nodes -%>
   <tr>
-    <td><%= link_to n.term.term, book_term_path(@book, n.term), :class => "level#{n.level}" %></td>
+    <td><%= link_to(n.term.term, book_term_path(@book, n.term, :anchor => @book.id), :class => "level#{n.level}") %></td>
     <td><%= n.tree_number %></td>
     <td><%= n.normalized_tree_number %></td>
     <td><%= n.dui %></td>
