@@ -1,0 +1,3 @@
+== Welcome to MEVO
+
+Copyright (c) 2009 Joon Lee, released under the MIT license
