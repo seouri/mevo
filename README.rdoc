@@ -1,4 +1,4 @@
-== Welcome to MEVO
+== Welcome to MEVO: MeSH Evolution Browser
 
 === Copyright of the source data
 
