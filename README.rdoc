@@ -1,3 +1,9 @@
 == Welcome to MEVO
 
-Copyright (c) 2009 Joon Lee, released under the MIT license
+=== Copyright of the source data
+
+MeSH (Medical Subject Headings) is the National Library of Medicine's controlled vocabulary thesaurus. MeSH is created, maintained, and provided by the National Library of Medicine. See http://www.nlm.nih.gov/mesh/2009/download/termscon.html for more details.
+
+=== Copyright of the MEVO application
+
+Copyright (c) 2009 Joon Lee, released under the MIT license.
