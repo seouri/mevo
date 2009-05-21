@@ -24,8 +24,4 @@ class Term < ActiveRecord::Base
     return [self] if last_dui.blank?
     Term.find_all_by_last_dui(last_dui)
   end
-
-  def tree_numbers
-    
-  end
 end
