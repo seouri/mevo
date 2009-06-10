@@ -16,11 +16,11 @@ class Node < ActiveRecord::Base
     tree = normalized_tree_number.split(/\./)
     tree.pop
     tree_num = tree.join(".")
-    Node.find_by_normalized_tree_number_and_book_id(tree_num, book_id)
+    Node.find_by_normalized_tree_number_and_book_id(tree_num, book_id, :include => :term)
   end
 
   def children
-    Node.find(:all, :conditions => ["normalized_tree_number LIKE ? AND level = ? AND book_id = ?", "#{normalized_tree_number}%", level + 1, book_id])
+    Node.find(:all, :conditions => ["normalized_tree_number LIKE ? AND level = ? AND book_id = ?", "#{normalized_tree_number}%", level + 1, book_id], :include => :term)
   end
 
   def ancestors
@@ -29,7 +29,7 @@ class Node < ActiveRecord::Base
     ancestors = []
     tree.each_index do |i|
       tree_num = tree[0..i].join(".")
-      ancestor = Node.find_by_normalized_tree_number_and_book_id(tree_num, book_id)
+      ancestor = Node.find_by_normalized_tree_number_and_book_id(tree_num, book_id, :include => :term)
       ancestors.push(ancestor)
     end
     ancestors
