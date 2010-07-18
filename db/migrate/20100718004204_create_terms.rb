@@ -11,7 +11,6 @@ class CreateTerms < ActiveRecord::Migration
   end
 
   def self.down
-    remove_index :terms, :last_dui
     drop_table :terms
   end
 end

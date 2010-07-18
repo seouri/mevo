@@ -2,8 +2,10 @@
 
 one:
   term: MyString
-  term_ui: MyString
+  books_count: 1
+  last_dui: MyString
 
 two:
   term: MyString
-  term_ui: MyString
+  books_count: 1
+  last_dui: MyString

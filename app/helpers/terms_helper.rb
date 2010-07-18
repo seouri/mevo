@@ -15,9 +15,9 @@ module TermsHelper
         td.push(content_tag(:td, link, :class => css_class))
       end
       css_class = term.term == entry.term ? "current" : nil
-      tr.push(content_tag(:tr, td.join("\n"), :class => css_class))
+      tr.push(content_tag(:tr, td.join("\n").html_safe, :class => css_class))
     end
-    content_tag(:table, tr.join("\n"), :id => "evolution_view")
+    content_tag(:table, tr.join("\n").html_safe, :id => "evolution_view")
   end
 
   def tree_view(nodes, current_node, term)
@@ -28,7 +28,7 @@ module TermsHelper
       tree.push(space + "<ul>") if current_node == sibling.first
       title = current_node.tree_number + ' | ' + current_node.normalized_tree_number + ' | ' + current_node.dui
       link_text = current_node.term.term == term.term ? "<strong>#{term.term}</strong>" : current_node.term.term
-      link =  link_to(link_text, term_path(current_node.term, :anchor => current_node.book.title), :title => title)
+      link =  link_to(link_text.html_safe, term_path(current_node.term, :anchor => current_node.book.title), :title => title)
       tree.push(space + "\t" + "<li class=\"expanded\">" + link)
     end
     children(nodes, current_node).each do |child|
@@ -39,7 +39,7 @@ module TermsHelper
       tree.push(space + "\t" + "</li><!-- #{current_node.term.term} -->")
       tree.push(space + "</ul><!-- #{current_node.term.term} -->") if current_node == sibling.last
     end
-    tree.join("\n")
+    tree.join("\n").html_safe
   end
 
   def sibling(nodes, current_node)

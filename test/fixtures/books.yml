@@ -2,6 +2,10 @@
 
 one:
   title: MyString
+  terms_count: 1
+  nodes_count: 1
 
 two:
   title: MyString
+  terms_count: 1
+  nodes_count: 1

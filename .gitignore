@@ -1,7 +1,8 @@
-.DS_Store
+.bundle
+db/*.sqlite3
 log/*.log
 tmp/**/*
 config/database.yml
-db/*.sqlite3
 *.swp
 tmp/restart.txt
+
