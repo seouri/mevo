@@ -5,9 +5,15 @@ one:
   term_id: 1
   page: 1
   level: 1
+  tree_number: MyString
+  normalized_tree_number: MyString
+  dui: MyString
 
 two:
   book_id: 1
   term_id: 1
   page: 1
   level: 1
+  tree_number: MyString
+  normalized_tree_number: MyString
+  dui: MyString
